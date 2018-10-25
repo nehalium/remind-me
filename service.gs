@@ -44,7 +44,19 @@ function getFutureDate(daysAhead) {
 // Get events from the calendar
 function getEvents(notifyDays) {
   var calendar = CalendarApp.getCalendarsByName(config["CalendarName"])[0];
-  return calendar.getEvents(getFutureDate(notifyDays), getFutureDate(notifyDays + 1));
+  return calendar.getEvents(getStartDate(notifyDays), getEndDate(notifyDays));
+}
+
+// Gets the start date for the calendar events query
+function getStartDate(notifyDays) {
+  return getFutureDate(notifyDays);
+}
+
+// Gets the end date for the calendar events query
+function getEndDate(notifyDays) {
+  var endDate = getFutureDate(notifyDays + 1)
+  endDate.setHours(0,0,-1,0);
+  return endDate;
 }
 
 // Determines if a name is in the list of names
