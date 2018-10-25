@@ -1,18 +1,3 @@
-// RemindMe
-// A Google App script to remind me of anniversaries. 
-// It currently looks 1 week in advance.
-//
-// Dependencies:
-// Access to anniversary calendar feed from BambooHR (see iCal link on home page).
-// Spreadsheet with 2 tabs: Names and Config.
-//
-// Usage:
-// The spreadsheet tab Names lists names for which to send notifications.
-// The spreadsheet tab Config includes config values like recipients of the notifications.
-//
-// Triggers:
-// Set it up a project trigger to run main once a day.
-
 // Global constants
 var SHEET_NAMES = "Names";
 var SHEET_CONFIG = "Config";
